@@ -2,7 +2,7 @@ let todoItems = [];
 
 function addTodo(item) {
 	const todo = {
-		text,
+		item,
 		checked: false,
 		id: Date.now(),
 	};
