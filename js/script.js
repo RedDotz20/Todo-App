@@ -6,7 +6,7 @@ function addItem(item) {
 		item,
 		checked: false,
 		id: Date.now(),
-		time: dateAndTime(),
+		time: dateAndTime.getDate(),
 	};
 
 	todoItems.push(todo);

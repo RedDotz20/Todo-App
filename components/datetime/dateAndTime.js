@@ -1,30 +1,36 @@
-const dateAndTime = {
-	dt: new Date(),
+class dateAndTime {
+	constructor(date, time) {
+		this.date = date;
+		this.time = time;
+		this.dt = new Date();
+	}
 
-	getDate: function () {
-		// Get Date
+	getDate() {
+		let dt = this.dt;
 		const date = ("0" + dt.getDate()).slice(-2);
 		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
 		const year = dt.getFullYear();
 
-		return `${date}/${month}/${year}`;
+		return dt.toLocaleDateString(); //`${date}/${month}/${year}`
+	}
 
-		// Return Date and Time
-		// const currentDate = `${date}/${month}/${year}`;
-		// const currentTime = dt.toLocaleTimeString();
-		// return `${currentTime}`;
-	},
-
-	getTime: function () {
-		// Get Time
+	getTime() {
+		let dt = this.dt;
 		const hour = dt.getHours() % 12 || 0; // 12 Hour Format
 		const minute = dt.getMinutes();
 		const second = dt.getSeconds();
 		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
-		const ampm = hour >= 12 ? "PM" : "AM";
+		const ampm = hour <= 12 ? "PM" : "AM";
 
 		return `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
-	},
-};
+	}
+}
+
+let currentDate = new dateAndTime().getDate();
+let currentTime = new dateAndTime().getTime();
+
+// TEST
+console.log(currentDate);
+console.log(currentTime);
 
 export default dateAndTime;
