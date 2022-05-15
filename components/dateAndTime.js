@@ -26,11 +26,11 @@ class dateAndTime {
 	}
 }
 
-let currentDate = new dateAndTime().getDate();
-let currentTime = new dateAndTime().getTime();
+const currentDate = new dateAndTime().getDate();
+const currentTime = new dateAndTime().getTime();
 
 // TEST
 console.log(currentDate);
 console.log(currentTime);
 
-export default dateAndTime;
+export { currentDate, currentTime };

@@ -1,4 +1,4 @@
-import dateAndTime from "../components/datetime/dateAndTime";
+import { currentDate, currentTime } from "../components/dateAndTime.js";
 let todoItems = [];
 
 function addItem(item) {
@@ -6,7 +6,8 @@ function addItem(item) {
 		item,
 		checked: false,
 		id: Date.now(),
-		time: dateAndTime.getDate(),
+		date: currentDate,
+		time: currentTime,
 	};
 
 	todoItems.push(todo);
@@ -17,4 +18,6 @@ function addItem(item) {
 addItem("todo item #1");
 addItem("todo item #2");
 addItem("todo item #3");
-// console.log(todoItems.map((todo) => todo.time));
+addItem("todo item #4");
+
+console.log(todoItems.map((todo) => todo.date));
