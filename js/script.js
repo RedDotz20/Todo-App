@@ -3,62 +3,54 @@
 
 let todoItems = [];
 
+const dateAndTime = {
+	dt: new Date(),
+
+	date: function () {
+		// Get Date
+		const date = ("0" + dt.getDate()).slice(-2);
+		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
+		const year = dt.getFullYear();
+
+		// Return Date and Time
+		const currentDate = `${date}/${month}/${year}`;
+		const currentTime = dt.toLocaleTimeString();
+		return `${currentTime}`;
+	},
+
+	time: function () {
+		// Get Time
+		const hour = dt.getHours() % 12 || 0; // 12 Hour Format
+		const minute = dt.getMinutes();
+		const second = dt.getSeconds();
+		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
+		const ampm = hour >= 12 ? "PM" : "AM";
+	},
+
+	getDate: function () {
+		return `${date}/${month}/${year}`;
+	},
+
+	// Return Time
+	getTime: function () {
+		return `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
+	},
+};
+
 function addTodo(item) {
 	const todo = {
 		item,
 		checked: false,
 		id: Date.now(),
+		time: dateAndTime(),
 	};
+
 	todoItems.push(todo);
 	console.log(todoItems);
 }
 
-function renderTodo(todo) {
-	// Select the first element with a class of 'todo-list'
-	const list = document.querySelector(".todo-list");
-
-	// Use the ternary operator to check if `todo.checked` is true
-	// if so, assign 'done' to `isChecked`. Otherwise, assign an empty string
-	const isChecked = todo.checked ? "done" : "";
-
-	// Create an `li` element and assign it to `node`
-	const node = document.createElement("li");
-
-	// Set the class attribute
-	node.setAttribute("class", `todo-item ${isChecked}`);
-
-	// Set the data-key attribute to the id of the todo
-	node.setAttribute("data-key", tods.id);
-
-	// Set the contents of the `li` element created above
-	node.innerHTML = `
-        <input id="${todo.id}" type="checkbox"/>
-        <label for="${todo.id}" class="tick js-tick"></label>
-        <span>${todo.text}</span>
-        <button class="delete-todo js-delete-todo">
-        // <svg><use href="#delete-icon"></use></svg>
-        </button>
-    `;
-
-	// Append the element to the DOM as the last child of
-	// the element referenced by the `list` variable
-	list.append(node);
-}
-
-// Select the form element
-const form = document.querySelector(".todo-form");
-
-form.addEventListener("submit", (event) => {
-	// prevent page refresh on form submission
-	event.preventDefault();
-	// select the text input
-	const input = document.querySelector(".todo-input");
-
-	// Get the value of the input and remove whitespace
-	const text = input.value.trim();
-	if (text !== "") {
-		addTodo(text);
-		input.value = "";
-		input.focus();
-	}
-});
+// TESTS
+addTodo("todo item #1");
+addTodo("todo item #2");
+addTodo("todo item #3");
+// console.log(todoItems.map((todo) => todo.time));
