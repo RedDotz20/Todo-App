@@ -1,2 +1,2 @@
-addTodo("todo item #1");
-// addTodo("todo item #2");
+addItem("todo item #1");
+addItem("todo item #2");
