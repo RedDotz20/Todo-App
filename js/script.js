@@ -11,19 +11,32 @@ function addItem(item) {
 	};
 
 	todoItems.push(todo);
-	console.log(todoItems);
+	// console.log(todoItems);
 }
 
 function toggleDone(key) {
-	const index = todoItems.findIndex((item) => item.id == Number(key));
+	const index = todoItems.findIndex((item) => item.id === Number(key));
 	todoItems[index].checked = !todoItems[index.checked];
-	renderTodo(todoItems[index]);
+	// renderTodo(todoItems[index]);
+	return index;
 }
 
-// TESTS
-// addItem("todo item #1");
+// ========= TESTS SECTION ==========
+
+addItem("todo item #1");
 // addItem("todo item #2");
 // addItem("todo item #3");
 // addItem("todo item #4");
 
-console.log(todoItems.map((todo) => todo.date));
+// array.map(function(currentValue, index, arr), thisValue)
+// console.log(
+// 	todoItems.map((todo) => {
+// 		return todo.date;
+// 	})
+// );
+
+// console.log(
+// 	todoItems.map(fucntion(todo) {
+// 		todo.date
+// 	})
+// );
