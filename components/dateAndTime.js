@@ -33,4 +33,4 @@ const currentTime = new dateAndTime().getTime();
 console.log(currentDate);
 console.log(currentTime);
 
-export { currentDate, currentTime };
+// export { currentDate, currentTime };
