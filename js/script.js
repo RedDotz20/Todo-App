@@ -21,8 +21,12 @@ function toggleDone(key) {
 
 function deleteTodo(key) {
 	const index = todoItems.findIndex((item) => item.id === Number(key));
-	todoItems[index].checked = !todoItems[index].checked;
-	renderTodo(todoItems[index]);
+	const todo = {
+		deleted: true,
+		...todoItems[index],
+	};
+	todoItems = todoItems.filter((item) => item.id !== Number(key));
+	renderTodo(todo);
 }
 
 // ========= TESTS ==========
