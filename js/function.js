@@ -1,18 +1,16 @@
 // import { currentDate, currentTime } from "../components/dateAndTime.js";
 
-// const inputItems = document.querySelector("#todo-input").innerText;
-// const addTodoBtn = document.querySelector("#addsomeItems");
+const todoInputItem = document.getElementById("todoInput");
+const todoAddButton = document.getElementById("todoaddbutton");
+const todoList = document.getElementById("todos");
 
-const list = document.getElementById("myList");
-const button = document.getElementById("addbtn");
-
-function addItems(btn, element) {
-	btn.addEventListener("click", function () {
-		let node = document.createElement("li");
-		const textnode = document.createTextNode("Water");
-		node.appendChild(textnode);
-		element.appendChild(node);
+function addTodoItems(button, list, itemAdd) {
+	button.addEventListener("click", function () {
+		let newNodeElement = document.createElement("li");
+		let newTextNode = document.createTextNode(itemAdd.value);
+		newNodeElement.appendChild(newTextNode);
+		list.appendChild(newNodeElement);
 	});
 }
 
-addItems(button, list);
+addTodoItems(todoAddButton, todoList, todoInputItem);
