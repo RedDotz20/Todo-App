@@ -1,4 +1,4 @@
-import { currentDate, currentTime } from "../components/dateAndTime.js";
+import { currentDate, currentTime } from "./dateAndTime.js";
 let todoItems = [];
 
 function addItem(item) {

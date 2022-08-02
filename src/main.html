@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>To-do List</title>
 	<link rel="stylesheet" href="/css/style.css">
-
+	<script defer src="/src/js/function.js"></script>
 </head>
 
 <body>
@@ -16,24 +16,14 @@
 		<h1>Todo List</h1>
 	</div>
 
-	<input autofocus id="todoInput" type="text" placeholder="Enter a new todo item" />
-	<button id="todoaddbutton">ADD</button>
+	<div class="todo-container">
+		<input autofocus id="todoInput" type="text" placeholder="Enter new item" />
+		<button id="todoaddbutton">ADD</button>
 
-	<ul id="todos">
+		<ul id="todos"></ul>
+	</div>
 
-	</ul>
 
-	<!-- ---------------------------------- -->
-
-	<!-- <ul id="myList">
-		<li>Coffee</li>
-		<li>Tea</li>
-	</ul>
-
-	<p>Click "Append" to append an item to the end of the list:</p>
-
-	<button id="addbtn">Append</button> -->
-	<script defer src="/js/function.js"></script>
 </body>
 
 </html>
