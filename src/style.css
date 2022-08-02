@@ -1,4 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@100&display=swap");
+
 * {
-	outline: red solid 1px; /* debugging */
+	/* outline: red solid 1px; */
 	box-sizing: border-box;
+	font-family: helvetica, sans-serif;
+	color: aliceblue;
+}
+
+html {
+	background-color: rgb(37, 37, 37);
+}
+
+.header {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.todo-container {
+	margin: auto;
+	width: 85%;
+	border: 2px solid rgb(255, 0, 0);
+	padding: 10px;
+}
+
+#todoInput {
+	display: block;
+	margin: 0;
 }

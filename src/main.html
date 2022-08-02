@@ -7,20 +7,22 @@
 	<meta name="description" content="Todo-List App by RedDotz20">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>To-do List</title>
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/src/style.css">
 	<script defer src="/src/js/function.js"></script>
 </head>
 
 <body>
 	<div class="header">
-		<h1>Todo List</h1>
+		<h1>TODO LIST</h1>
 	</div>
 
 	<div class="todo-container">
 		<input autofocus id="todoInput" type="text" placeholder="Enter new item" />
 		<button id="todoaddbutton">ADD</button>
+		<div class="tasks">
+			<ul id="todos"></ul>
+		</div>
 
-		<ul id="todos"></ul>
 	</div>
 
 
