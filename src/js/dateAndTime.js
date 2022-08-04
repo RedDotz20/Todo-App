@@ -30,7 +30,7 @@ const currentDate = new dateAndTime().getDate();
 const currentTime = new dateAndTime().getTime();
 
 // TEST
-// console.log(currentDate);
-// console.log(currentTime);
+console.log(currentDate);
+console.log(currentTime);
 
 export { currentDate, currentTime };
