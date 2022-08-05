@@ -1,4 +1,4 @@
-class dateAndTime {
+export default class dateAndTime {
 	constructor(date, time) {
 		this.date = date;
 		this.time = time;
@@ -11,12 +11,14 @@ class dateAndTime {
 		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
 		const year = dt.getFullYear();
 
-		return dt.toLocaleDateString(); //`${date}/${month}/${year}`
+		return dt.toLocaleDateString();
+		// `${date}/${month}/${year}`
 	}
 
 	getTime() {
 		let dt = this.dt;
-		const hour = dt.getHours() % 12 || 0; // 12 Hour Format
+		// 12 Hour Format
+		const hour = dt.getHours() % 12 || 0;
 		const minute = dt.getMinutes();
 		const second = dt.getSeconds();
 		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
@@ -26,11 +28,6 @@ class dateAndTime {
 	}
 }
 
-const currentDate = new dateAndTime().getDate();
-const currentTime = new dateAndTime().getTime();
+export const currentDate = new dateAndTime().getDate();
 
-// TEST
-console.log(currentDate);
-console.log(currentTime);
-
-export { currentDate, currentTime };
+export const currentTime = new dateAndTime().getTime();

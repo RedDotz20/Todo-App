@@ -10,5 +10,3 @@ const posts = () => {
 	items.push(postsList);
 };
 // const postIds = posts.map((asdfasd) => asdfasd.title);
-
-const postIdsObject = items.((asdfasd) => asdfasd.id);

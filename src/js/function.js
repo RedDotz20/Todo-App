@@ -1,12 +1,15 @@
-// import { currentDate, currentTime } from "/src/js/dateAndTime";
+import dateAndTime, { currentDate, currentTime } from "/src/js/dateAndTime.js";
 
 const addTask = document.querySelector("#add-task");
 const inputTask = document.querySelector("#input-task");
 const taskContainer = document.querySelector("#tasks-container");
 
-addTask.addEventListener("click", taskFunction);
+inputTask.addEventListener("keyup", (e) => {
+	e.preventDefault();
+	if (e.keyCode === 13) addTask.click();
+});
 
-function taskFunction() {
+addTask.addEventListener("click", () => {
 	let task = document.createElement("div");
 	task.classList.add("task");
 
@@ -24,13 +27,11 @@ function taskFunction() {
 	deleteButton.classList.add("deleteTask");
 	task.appendChild(deleteButton);
 
-	// ---------------------
-	// let time = currentTime;
-	// let date = currentDate;
-	// let dateTime = document.createElement("p");
-	// dateTime.innerHTML = time;
-	// task.appendChild(dateTime);
-	// ---------------------
+	let time = currentTime;
+	let date = currentDate;
+	let dateTime = document.createElement("p");
+	dateTime.textContent = `${date} ${time}`;
+	task.appendChild(dateTime);
 
 	inputTask.value === ""
 		? alert("Please Enter a Task")
@@ -46,4 +47,4 @@ function taskFunction() {
 		let target = e.target;
 		target.parentElement.remove();
 	});
-}
+});
