@@ -1,15 +1,15 @@
-import dateAndTime, { currentDate, currentTime } from "/src/js/dateAndTime.js";
+import dateAndTime, { currentDate, currentTime } from "./dateAndTime.js";
 
-const addTask = document.querySelector("#add-task");
-const inputTask = document.querySelector("#input-task");
-const taskContainer = document.querySelector("#tasks-container");
+const addTask = document.getElementById("add-task");
+const inputTask = document.getElementById("input-task");
+const taskContainer = document.getElementById("tasks-container");
 
 inputTask.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) addTask.click();
 });
 
-addTask.addEventListener("click", () => {
+addTask.addEventListener("click", (e) => {
 	let task = document.createElement("div");
 	task.classList.add("task");
 
@@ -19,19 +19,23 @@ addTask.addEventListener("click", () => {
 
 	let checkButton = document.createElement("button");
 	checkButton.innerHTML = "CHECKED";
-	checkButton.classList.add("checkTask");
+	checkButton.classList.add("task-button");
 	task.appendChild(checkButton);
 
 	let deleteButton = document.createElement("button");
 	deleteButton.innerHTML = "DELETE";
-	deleteButton.classList.add("deleteTask");
+	deleteButton.classList.add("task-button");
 	task.appendChild(deleteButton);
 
 	let time = currentTime;
 	let date = currentDate;
-	let dateTime = document.createElement("p");
-	dateTime.textContent = `${date} ${time}`;
-	task.appendChild(dateTime);
+	let dateContainer = document.createElement("div");
+	dateContainer.classList.add("dateAndTime");
+
+	let dateTime = document.createElement("span");
+	dateTime.textContent = `Date Added ${date} ${time}`;
+	dateContainer.appendChild(dateTime);
+	task.appendChild(dateContainer);
 
 	inputTask.value === ""
 		? alert("Please Enter a Task")
@@ -40,7 +44,8 @@ addTask.addEventListener("click", () => {
 	inputTask.value = "";
 
 	checkButton.addEventListener("click", () => {
-		checkButton.parentElement.style.textDecoration = "line-through";
+		checkButton.previousElementSibling.style.textDecoration =
+			"line-through";
 	});
 
 	deleteButton.addEventListener("click", (e) => {

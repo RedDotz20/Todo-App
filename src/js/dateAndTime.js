@@ -11,14 +11,13 @@ export default class dateAndTime {
 		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
 		const year = dt.getFullYear();
 
-		return dt.toLocaleDateString();
 		// `${date}/${month}/${year}`
+		return dt.toLocaleDateString();
 	}
 
 	getTime() {
 		let dt = this.dt;
-		// 12 Hour Format
-		const hour = dt.getHours() % 12 || 0;
+		const hour = dt.getHours() % 12 || 0; // 12 Hr Format
 		const minute = dt.getMinutes();
 		const second = dt.getSeconds();
 		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
@@ -29,5 +28,4 @@ export default class dateAndTime {
 }
 
 export const currentDate = new dateAndTime().getDate();
-
 export const currentTime = new dateAndTime().getTime();
