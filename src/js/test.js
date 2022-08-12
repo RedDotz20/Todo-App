@@ -3,6 +3,7 @@ import dateAndTime, { currentDate, currentTime } from "./dateAndTime.js";
 //! Button Event Listener
 $("#addTask").click(function addTask(e) {
 	$("<div></div>").addClass("task");
+
 	$("<li></li>").text(`${$("#input-task").val()}`);
 });
 
