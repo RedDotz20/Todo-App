@@ -17,15 +17,33 @@ addTask.addEventListener("click", (e) => {
 	li.innerText = `${inputTask.value}`;
 	task.appendChild(li);
 
+	// ----------------------------------------
+
 	let checkButton = document.createElement("button");
+
+	// let chkImg = document.createElement("img");
+	// chkImg.setAttribute("src", "/img/check-solid.svg");
+	// checkButton.appendChild(chkImg);
 	checkButton.innerHTML = "CHECKED";
+
+	checkButton.classList.add("check-btn");
 	checkButton.classList.add("task-button");
 	task.appendChild(checkButton);
 
+	// ----------------------------------------
+
 	let deleteButton = document.createElement("button");
+
+	// let delImg = document.createElement("img");
+	// delImg.setAttribute("src", "/img/trash-solid.svg");
+	// deleteButton.appendChild(delImg);
 	deleteButton.innerHTML = "DELETE";
+
+	deleteButton.classList.add("delete-btn");
 	deleteButton.classList.add("task-button");
 	task.appendChild(deleteButton);
+
+	// ----------------------------------------
 
 	let time = currentTime;
 	let date = currentDate;
@@ -33,7 +51,7 @@ addTask.addEventListener("click", (e) => {
 	dateContainer.classList.add("dateAndTime");
 
 	let dateTime = document.createElement("span");
-	dateTime.textContent = `Date Added ${date} ${time}`;
+	dateTime.textContent = `${time} - ${date}`;
 	dateContainer.appendChild(dateTime);
 	task.appendChild(dateContainer);
 

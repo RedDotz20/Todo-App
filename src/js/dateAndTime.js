@@ -23,7 +23,8 @@ export default class dateAndTime {
 		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
 		const ampm = hour <= 12 ? "PM" : "AM";
 
-		return `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
+		// return `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
+		return `${hour}:${minute} ${ampm}`;
 	}
 }
 
