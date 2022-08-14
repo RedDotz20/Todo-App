@@ -10,7 +10,7 @@ inputTask.addEventListener("keyup", (e) => {
 	if (e.keyCode === 13) addTask.click();
 });
 
-//! Button Event
+//! Click Button Event
 addTask.addEventListener("click", (e) => {
 	//* Creating "task" Container
 
@@ -18,6 +18,7 @@ addTask.addEventListener("click", (e) => {
 	task.classList.add("task");
 
 	let li = document.createElement("li");
+	li.classList.add("content");
 	li.innerText = `${inputTask.value}`;
 	task.appendChild(li);
 
@@ -54,7 +55,7 @@ addTask.addEventListener("click", (e) => {
 	dateContainer.appendChild(dateTime);
 	task.appendChild(dateContainer);
 
-	//* Task Input Validation (empty string)
+	//* Task Input Validation (empty field)
 
 	inputTask.value === ""
 		? alert("Please Enter a Task")
