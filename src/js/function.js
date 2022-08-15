@@ -4,30 +4,24 @@ const addTask = document.getElementById("add-task");
 const inputTask = document.getElementById("input-task");
 const taskContainer = document.getElementById("tasks-container");
 
-//! Enter Key Event
-inputTask.addEventListener("keyup", (e) => {
-	e.preventDefault();
-	if (e.keyCode === 13) addTask.click();
-});
+inputTask.addEventListener("keyup", enterKeyFunction);
+addTask.addEventListener("click", createTaskFunction);
 
-//! Click Button Event
-addTask.addEventListener("click", (e) => {
+function createTaskFunction() {
 	//* Creating "task" Container
+	let newTask = document.createElement("div");
+	newTask.classList.add("task");
 
-	let task = document.createElement("div");
-	task.classList.add("task");
-
-	let li = document.createElement("li");
-	li.classList.add("content");
-	li.innerText = `${inputTask.value}`;
-	task.appendChild(li);
+	let taskValue = document.createElement("li");
+	taskValue.classList.add("content");
+	taskValue.innerText = `${inputTask.value}`;
+	newTask.appendChild(taskValue);
 
 	//* Appending Check Button to Task
-
 	let checkButton = document.createElement("button");
 	checkButton.classList.add("check-btn", "task-button");
 	checkButton.innerHTML = "CHECKED";
-	task.appendChild(checkButton);
+	newTask.appendChild(checkButton);
 
 	// TODO: SVG ICON append to checkButton
 	// let chkImg = document.createElement("img");
@@ -35,11 +29,10 @@ addTask.addEventListener("click", (e) => {
 	// checkButton.appendChild(chkImg);
 
 	//* Appending Delete Button to Task
-
 	let deleteButton = document.createElement("button");
 	deleteButton.classList.add("delete-btn", "task-button");
 	deleteButton.innerHTML = "DELETE";
-	task.appendChild(deleteButton);
+	newTask.appendChild(deleteButton);
 
 	// TODO: SVG ICON append to deleteButton
 	// let delImg = document.createElement("img");
@@ -47,30 +40,32 @@ addTask.addEventListener("click", (e) => {
 	// deleteButton.appendChild(delImg);
 
 	//* Appending Date and Time Variables to Task
-
 	let dateContainer = document.createElement("div");
 	let dateTime = document.createElement("span");
 	dateContainer.classList.add("dateAndTime");
 	dateTime.textContent = `${currentTime} - ${currentDate}`;
 	dateContainer.appendChild(dateTime);
-	task.appendChild(dateContainer);
-
-	//* Task Input Validation (empty field)
-
-	inputTask.value === ""
-		? alert("Please Enter a Task")
-		: taskContainer.appendChild(task);
-	inputTask.value = ""; // delete input value
+	newTask.appendChild(dateContainer);
 
 	//! Check Button Event
 	checkButton.addEventListener("click", () => {
-		checkButton.previousElementSibling.style.textDecoration =
-			"line-through";
+		let doneTask = checkButton.previousElementSibling;
+		doneTask.style.textDecoration = "line-through";
 	});
 
 	//! Remove Button Event
-	deleteButton.addEventListener("click", (e) => {
-		let target = e.target;
+	deleteButton.addEventListener("click", (element) => {
+		let target = element.target;
 		target.parentElement.remove();
 	});
-});
+
+	//* Task Input Validation (empty field)
+	if (inputTask.value === "") return alert("Please Enter a Task");
+	inputTask.value = ""; //? delete input value
+	return taskContainer.appendChild(newTask);
+}
+
+function enterKeyFunction(e) {
+	e.preventDefault();
+	if (e.keyCode === 13) addTask.click();
+}

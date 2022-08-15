@@ -10,9 +10,7 @@ export default class dateAndTime {
 		const date = ("0" + dt.getDate()).slice(-2);
 		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
 		const year = dt.getFullYear();
-
-		// `${date}/${month}/${year}`
-		return dt.toLocaleDateString();
+		return dt.toLocaleDateString(); //* ${date}/${month}/${year}` *//
 	}
 
 	getTime() {
@@ -22,8 +20,7 @@ export default class dateAndTime {
 		const second = dt.getSeconds();
 		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
 		const ampm = hour <= 12 ? "PM" : "AM";
-
-		// return `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
+		// `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
 		return `${hour}:${minute} ${ampm}`;
 	}
 }

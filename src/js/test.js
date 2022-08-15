@@ -1,3 +1,7 @@
+//? JQuery CDN
+//<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+//<script defer type="module" src="./js/test.js"></script>
+
 import dateAndTime, { currentDate, currentTime } from "./dateAndTime.js";
 
 //! EVENT LISTENERS
@@ -43,10 +47,8 @@ function addTask() {
 	//! Tasks Event Listeners
 
 	//* Checked Button Event
-	$(".check-btn").click(function () {
-		console.log(
-			$(this).siblings().first().css("background-color", "yellow")
-		);
+	$(".check-btn").click(function (e) {
+		console.log($(e).siblings().first().css("background-color", "yellow"));
 	});
 
 	//* Remove Button Event
