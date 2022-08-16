@@ -1,18 +1,17 @@
-import dateAndTime, { currentDate, currentTime } from "./dateAndTime.js";
+import { currentDate, currentTime } from "./dateAndTime.js";
+import { addTask, inputTask, taskContainer } from "/src/script.js";
 
-const addTask = document.getElementById("add-task");
-const inputTask = document.getElementById("input-task");
-const taskContainer = document.getElementById("tasks-container");
+// inputTask.addEventListener("keyup", enterKeyFunction);
+// function enterKeyFunction(e) {
+// 	e.preventDefault();
+// 	if (e.keyCode === 13) addTask.click();
+// }
 
-inputTask.addEventListener("keyup", enterKeyFunction);
-addTask.addEventListener("click", createTaskFunction);
-
-function createTaskFunction() {
+export default function createTaskFunction() {
 	//* Creating "task" Container
 	let newTask = document.createElement("div");
-	newTask.classList.add("task");
-
 	let taskValue = document.createElement("li");
+	newTask.classList.add("task");
 	taskValue.classList.add("content");
 	taskValue.innerText = `${inputTask.value}`;
 	newTask.appendChild(taskValue);
@@ -61,11 +60,6 @@ function createTaskFunction() {
 
 	//* Task Input Validation (empty field)
 	if (inputTask.value === "") return alert("Please Enter a Task");
-	inputTask.value = ""; //? delete input value
+	inputTask.value = "";
 	return taskContainer.appendChild(newTask);
-}
-
-function enterKeyFunction(e) {
-	e.preventDefault();
-	if (e.keyCode === 13) addTask.click();
 }
