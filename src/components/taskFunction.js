@@ -1,13 +1,12 @@
 import { currentDate, currentTime } from "./dateAndTime.js";
 import { addTask, inputTask, taskContainer } from "/src/script.js";
 
-// inputTask.addEventListener("keyup", enterKeyFunction);
-// function enterKeyFunction(e) {
-// 	e.preventDefault();
-// 	if (e.keyCode === 13) addTask.click();
-// }
+export function enterKeyFunction(e) {
+	e.preventDefault();
+	if (e.keyCode === 13) addTask.click();
+}
 
-export default function createTaskFunction() {
+export function createTaskFunction() {
 	//* Creating "task" Container
 	let newTask = document.createElement("div");
 	let taskValue = document.createElement("li");

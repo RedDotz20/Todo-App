@@ -7,8 +7,8 @@ export default class dateAndTime {
 
 	getDate() {
 		let dt = this.dt;
-		const date = ("0" + dt.getDate()).slice(-2);
-		const month = ("0" + (dt.getMonth() + 1)).slice(-2);
+		const date = `0 ${dt.getDate()}`.slice(-2);
+		const month = `0 ${dt.getMonth() + 1}`.slice(-2);
 		const year = dt.getFullYear();
 		return dt.toLocaleDateString(); //* ${date}/${month}/${year}` *//
 	}
