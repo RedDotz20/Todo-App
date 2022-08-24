@@ -1,29 +1,25 @@
-export default class dateAndTime {
-	constructor(date, time) {
-		this.date = date;
-		this.time = time;
-		this.dt = new Date();
-	}
+function getDateAndTime(val) {
+	let value = val.toLowerCase();
+	let year = new Date().getFullYear();
+	let month = new Date().getMonth() + 1;
+	let day = new Date().getDate();
+	let hours = new Date().getHours();
+	let minutes = new Date().getMinutes();
+	let seconds = new Date().getSeconds();
+	let miliseconds = (new Date().getMilliseconds() / 10) | 0;
+	let session = hours >= 12 ? "PM" : "AM";
 
-	getDate() {
-		let dt = this.dt;
-		const date = `0 ${dt.getDate()}`.slice(-2);
-		const month = `0 ${dt.getMonth() + 1}`.slice(-2);
-		const year = dt.getFullYear();
-		return dt.toLocaleDateString(); //* ${date}/${month}/${year}` *//
-	}
-
-	getTime() {
-		let dt = this.dt;
-		const hour = dt.getHours() % 12 || 0; // 12 Hr Format
-		const minute = dt.getMinutes();
-		const second = dt.getSeconds();
-		const miliSeconds = (dt.getMilliseconds() / 10) | 0;
-		const ampm = hour <= 12 ? "PM" : "AM";
-		// `${hour}:${minute}:${second}:${miliSeconds} ${ampm}`;
-		return `${hour}:${minute} ${ampm}`;
+	switch (value) {
+		case "date":
+			return `${month}/${day}/${year}`;
+		case "12hrtime":
+			return `${hours % 12 || 0}:${minutes} ${session}`;
+		case "24hrtime":
+			return `${hours}:${minutes}`;
+		default:
+			return "Value out of range";
 	}
 }
 
-export const currentDate = new dateAndTime().getDate();
-export const currentTime = new dateAndTime().getTime();
+export const currentDate = getDateAndTime("date");
+export const currentTime = getDateAndTime("12hrtime");

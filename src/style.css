@@ -58,10 +58,10 @@ body {
 	margin: 0 auto;
 	padding-top: 5px;
 	border: 1px solid var(--primary);
+	border-radius: 0 5px 5px 0;
 	background: var(--primary);
 	text-align: center;
 	color: #fff;
-	border-radius: 0 5px 5px 0;
 	cursor: pointer;
 	font-size: 20px;
 }
