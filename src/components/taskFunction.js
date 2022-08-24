@@ -22,24 +22,14 @@ export function createTaskFunction() {
 	//* Creating and Appending Check Button to Task
 	let checkButton = document.createElement("button");
 	checkButton.classList.add("check-btn");
-	checkButton.innerHTML = "CHECKED";
+	checkButton.innerHTML = '<i class="material-icons">check</i>';
 	newTaskBtn.appendChild(checkButton);
-
-	// TODO: SVG ICON append to checkButton
-	// let chkImg = document.createElement("img");
-	// chkImg.setAttribute("src", "/img/check-solid.svg");
-	// checkButton.appendChild(chkImg);
 
 	//* Creating and Appending Delete Button to Task
 	let deleteButton = document.createElement("button");
 	deleteButton.classList.add("delete-btn");
-	deleteButton.innerHTML = "DELETE";
+	deleteButton.innerHTML = '<i class="material-icons">delete</i>';
 	newTaskBtn.appendChild(deleteButton);
-
-	// TODO: SVG ICON append to deleteButton
-	// let delImg = document.createElement("img");
-	// delImg.setAttribute("src", "/img/trash-solid.svg");
-	// deleteButton.appendChild(delImg);
 
 	//* Appending Date and Time Variables to Task
 	let dateContainer = document.createElement("div");
@@ -61,7 +51,7 @@ export function createTaskFunction() {
 	//! Remove Button Event
 	deleteButton.addEventListener("click", (element) => {
 		let target = element.target;
-		target.parentElement.parentElement.remove();
+		target.parentElement.parentElement.parentElement.remove();
 	});
 
 	//* Task Input Validation (empty field)
