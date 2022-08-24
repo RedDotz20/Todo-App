@@ -25,7 +25,8 @@ body {
 }
 
 #add-task-container {
-	width: 480px;
+	width: 500px;
+	margin-bottom: 15px;
 	display: flex;
 	position: relative;
 	font-size: small;
@@ -75,7 +76,6 @@ input::placeholder {
 
 #tasks-container {
 	flex-flow: column wrap;
-	padding: 10px;
 	width: 500px;
 }
 
@@ -90,14 +90,13 @@ input::placeholder {
 	position: relative;
 }
 
-.task li {
-	display: inline-block;
-	height: auto;
-
-	list-style: none;
+.task .content {
 	flex: 4;
+	height: auto;
+	margin-right: 10px;
 	font-size: 15px;
 	font-weight: 600;
+	list-style: none;
 	word-break: break-all;
 	word-wrap: break-word;
 	white-space: pre-wrap;
