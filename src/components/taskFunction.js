@@ -7,7 +7,7 @@ export function enterKeyFunction(e) {
 }
 
 export function createTaskFunction() {
-	//* Creating "task" Container
+	//* Creating Task Container | Getting Input Value
 	let newTask = document.createElement("div");
 	let taskValue = document.createElement("li");
 	newTask.classList.add("task");
@@ -15,22 +15,26 @@ export function createTaskFunction() {
 	taskValue.innerText = `${inputTask.value}`;
 	newTask.appendChild(taskValue);
 
-	//* Appending Check Button to Task
+	//* Creating Task Button Container
+	let newTaskBtn = document.createElement("div");
+	newTaskBtn.classList.add("taskbtn-Container");
+
+	//* Creating and Appending Check Button to Task
 	let checkButton = document.createElement("button");
-	checkButton.classList.add("check-btn", "task-button");
+	checkButton.classList.add("check-btn");
 	checkButton.innerHTML = "CHECKED";
-	newTask.appendChild(checkButton);
+	newTaskBtn.appendChild(checkButton);
 
 	// TODO: SVG ICON append to checkButton
 	// let chkImg = document.createElement("img");
 	// chkImg.setAttribute("src", "/img/check-solid.svg");
 	// checkButton.appendChild(chkImg);
 
-	//* Appending Delete Button to Task
+	//* Creating and Appending Delete Button to Task
 	let deleteButton = document.createElement("button");
-	deleteButton.classList.add("delete-btn", "task-button");
+	deleteButton.classList.add("delete-btn");
 	deleteButton.innerHTML = "DELETE";
-	newTask.appendChild(deleteButton);
+	newTaskBtn.appendChild(deleteButton);
 
 	// TODO: SVG ICON append to deleteButton
 	// let delImg = document.createElement("img");
@@ -43,18 +47,21 @@ export function createTaskFunction() {
 	dateContainer.classList.add("dateAndTime");
 	dateTime.textContent = `${currentTime} - ${currentDate}`;
 	dateContainer.appendChild(dateTime);
-	newTask.appendChild(dateContainer);
+	newTaskBtn.appendChild(dateContainer);
+
+	//* Appending Task Button Container to Task
+	newTask.appendChild(newTaskBtn);
 
 	//! Check Button Event
 	checkButton.addEventListener("click", () => {
-		let doneTask = checkButton.previousElementSibling;
+		let doneTask = checkButton.parentElement.previousElementSibling;
 		doneTask.style.textDecoration = "line-through";
 	});
 
 	//! Remove Button Event
 	deleteButton.addEventListener("click", (element) => {
 		let target = element.target;
-		target.parentElement.remove();
+		target.parentElement.parentElement.remove();
 	});
 
 	//* Task Input Validation (empty field)
