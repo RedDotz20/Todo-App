@@ -3,7 +3,7 @@
 * {
 	box-sizing: border-box;
 	font-family: helvetica, sans-serif;
-	outline: red solid 1px;
+	/* outline: red solid 1px; */
 	color: white;
 }
 
@@ -85,15 +85,13 @@ input::placeholder {
 	border: 2px solid #ffbb00;
 	border-radius: 10px;
 	height: auto;
-	padding: 10px;
 	margin-bottom: 5px;
-	position: relative;
 }
 
 .task .content {
-	flex: 4;
+	flex: 2;
 	height: auto;
-	margin-right: 10px;
+	margin: 10px 0 10px 10px;
 	font-size: 15px;
 	font-weight: 600;
 	list-style: none;
@@ -102,16 +100,13 @@ input::placeholder {
 	white-space: pre-wrap;
 }
 
-.dateAndTime {
-	font-size: 10px;
-	margin: 3px 0;
-	position: absolute;
-	top: 38px;
-	right: 12px;
+.taskbtn-Container {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 10px;
 }
 
 .task .check-btn {
-	right: 75px;
 	border: 2px solid green;
 	border-radius: 7px;
 	color: green;
@@ -125,4 +120,12 @@ input::placeholder {
 	color: red;
 	font-weight: 550;
 	height: 28px;
+}
+
+.dateAndTime {
+	font-size: 10px;
+	text-align: right;
+	margin: 3px 0;
+	flex-basis: 100%;
+	width: 0;
 }
