@@ -1,5 +1,11 @@
 import { currentDate, currentTime } from "./dateAndTime.js";
-import { addTask, inputTask, taskContainer } from "/src/script.js";
+import {
+	openAlert,
+	closeAlert,
+	addTask,
+	inputTask,
+	taskContainer,
+} from "/src/script.js";
 
 export function enterKeyFunction(e) {
 	e.preventDefault();
@@ -56,7 +62,13 @@ export function createTaskFunction() {
 	});
 
 	//* Task Input Validation (empty field)
-	if (inputTask.value === "") return alert("Please Enter a Task");
-	inputTask.value = "";
-	return taskContainer.appendChild(newTask);
+	if (inputTask.value === "") {
+		openAlert.style.display = "block";
+		closeAlert.addEventListener("click", () => {
+			openAlert.style.display = "none";
+		});
+	} else {
+		inputTask.value = "";
+		return taskContainer.appendChild(newTask);
+	}
 }

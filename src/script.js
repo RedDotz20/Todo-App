@@ -3,6 +3,9 @@ import {
 	enterKeyFunction,
 } from "/src/components/taskFunction.js";
 
+export let openAlert = document.getElementById("alertBox-container");
+export let closeAlert = document.getElementById("alertClose-btn");
+
 export const addTask = document.getElementById("add-task");
 export const inputTask = document.getElementById("input-task");
 export const taskContainer = document.getElementById("tasks-container");

@@ -10,11 +10,22 @@
 	<link rel="shortcut icon" href="#">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="/src/styles/alertBox.css">
 	<script defer type="module" src="./script.js"></script>
 	<!-- <script defer src="./js/themes.js"></script> -->
 </head>
 
 <body>
+	<div id="alertBox-container">
+		<div id="alertBox">
+			<span id="error-icon" class="material-icons">error</span>
+			<p>Please Enter A New Task</p>
+			<div id="alertBox-close">
+				<span id="alertClose-btn" class="material-icons">close</span>
+			</div>
+		</div>
+	</div>
+
 	<h1 class="header">
 		<span>TODO LIST</span>
 		<!-- <button id="theme-btn">THEME</button> -->
