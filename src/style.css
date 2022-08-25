@@ -118,7 +118,6 @@ input::placeholder {
 	border: 3px solid var(--primary);
 	border-radius: 4px;
 	height: 33px;
-	/* margin: 0 4px; */
 }
 
 .check-btn:hover {
@@ -133,7 +132,7 @@ input::placeholder {
 
 .dateAndTime {
 	font-size: 10px;
-	text-align: right;
+	text-align: center;
 	margin: 3px 0;
 	flex-basis: 100%;
 	width: 0;

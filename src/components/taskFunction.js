@@ -56,8 +56,8 @@ export function createTaskFunction() {
 	});
 
 	//! Remove Button Event
-	deleteButton.addEventListener("click", (element) => {
-		let target = element.target;
+	deleteButton.addEventListener("click", (e) => {
+		let target = e.target;
 		target.parentElement.parentElement.parentElement.remove();
 	});
 
