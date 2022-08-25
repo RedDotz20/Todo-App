@@ -46,6 +46,7 @@ export function createTaskFunction() {
 	checkButton.addEventListener("click", () => {
 		let doneTask = checkButton.parentElement.previousElementSibling;
 		doneTask.style.textDecoration = "line-through";
+		doneTask.style.color = "rgb(0, 255, 0)";
 	});
 
 	//! Remove Button Event

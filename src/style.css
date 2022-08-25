@@ -1,13 +1,13 @@
-:root {
-	--primary: #ffbb00;
-	--background: rgb(48, 47, 47);
-}
-
 * {
 	box-sizing: border-box;
 	font-family: helvetica, sans-serif;
-	/* outline: red solid 1px; */
 	color: white;
+	/* outline: red solid 1px; */
+}
+
+:root {
+	--primary: #ffbb00;
+	--background: rgb(48, 47, 47);
 }
 
 body {
@@ -37,15 +37,15 @@ body {
 
 #input-task {
 	font-size: large;
+	font-weight: 700;
 	width: 100%;
+	height: 40px;
 	border: 3px solid var(--primary);
+	border-radius: 5px 0 0 5px;
 	border-right: none;
 	padding: 5px;
-	height: 40px;
-	border-radius: 5px 0 0 5px;
 	outline: none;
 	color: black;
-	font-weight: 700;
 }
 
 #input-task:focus {
@@ -96,7 +96,7 @@ input::placeholder {
 	flex: 2;
 	height: auto;
 	margin-right: 10px;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 600;
 	list-style: none;
 	word-break: break-all;
@@ -106,8 +106,10 @@ input::placeholder {
 
 .taskbtn-Container {
 	display: flex;
+	justify-content: space-evenly;
 	flex-wrap: wrap;
 	margin: auto 0;
+	min-width: 100px;
 }
 
 .check-btn,
@@ -116,7 +118,7 @@ input::placeholder {
 	border: 3px solid var(--primary);
 	border-radius: 4px;
 	height: 33px;
-	margin: 0 4px;
+	/* margin: 0 4px; */
 }
 
 .check-btn:hover {
