@@ -97,6 +97,21 @@ input::placeholder {
 	height: auto;
 	margin-bottom: 5px;
 	padding: 10px 10px 10px 15px;
+	animation-name: animateTask;
+	animation-duration: 0.3s;
+	position: relative;
+}
+
+@keyframes animateTask {
+	from {
+		left: -50px;
+		opacity: 0;
+	}
+
+	to {
+		left: 0;
+		opacity: 1;
+	}
 }
 
 .task .content {
