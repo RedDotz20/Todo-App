@@ -19,6 +19,11 @@ body {
 	margin: 30px 0;
 }
 
+.header span {
+	min-width: 170px;
+	white-space: nowrap;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -28,7 +33,8 @@ body {
 }
 
 #add-task-container {
-	width: 500px;
+	min-width: 320px;
+	width: 80%;
 	margin-bottom: 15px;
 	display: flex;
 	position: relative;
@@ -79,7 +85,8 @@ input::placeholder {
 
 #tasks-container {
 	flex-flow: column wrap;
-	width: 500px;
+	min-width: 320px;
+	width: 80%;
 }
 
 .task {
