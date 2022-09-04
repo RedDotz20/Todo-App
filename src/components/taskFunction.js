@@ -15,50 +15,44 @@ export function enterKeyFunction(e) {
 export function createTaskFunction() {
 	//* Creating Task Container | Getting Input Value
 	let newTask = document.createElement("div");
-	let taskValue = document.createElement("li");
 	newTask.classList.add("task");
-	taskValue.classList.add("content");
+	let taskValContainer = document.createElement("ul");
+	let taskValue = document.createElement("li");
 	taskValue.innerText = `${inputTask.value}`;
-	newTask.appendChild(taskValue);
-
-	//* Creating Task Button Container
-	let newTaskBtn = document.createElement("div");
-	newTaskBtn.classList.add("taskbtn-Container");
+	taskValContainer.appendChild(taskValue);
+	newTask.appendChild(taskValContainer);
 
 	//* Creating and Appending Check Button to Task
-	let checkButton = document.createElement("button");
-	checkButton.classList.add("check-btn");
-	checkButton.innerHTML = '<i class="material-icons">check</i>';
-	newTaskBtn.appendChild(checkButton);
+	let checkButton = document.createElement("i");
+	checkButton.classList.add("material-icons", "check-btn");
+	checkButton.innerText = "check";
+	newTask.appendChild(checkButton);
 
 	//* Creating and Appending Delete Button to Task
-	let deleteButton = document.createElement("button");
-	deleteButton.classList.add("delete-btn");
-	deleteButton.innerHTML = '<i class="material-icons">delete</i>';
-	newTaskBtn.appendChild(deleteButton);
+	let deleteButton = document.createElement("i");
+	deleteButton.classList.add("material-icons", "delete-btn");
+	deleteButton.innerText = "delete";
+	newTask.appendChild(deleteButton);
 
 	//* Appending Date and Time Variables to Task
-	let dateContainer = document.createElement("div");
-	let dateTime = document.createElement("span");
-	dateContainer.classList.add("dateAndTime");
-	dateTime.textContent = `${currentTime} - ${currentDate}`;
-	dateContainer.appendChild(dateTime);
-	newTaskBtn.appendChild(dateContainer);
-
-	//* Appending Task Button Container to Task
-	newTask.appendChild(newTaskBtn);
+	// let dateContainer = document.createElement("div");
+	// let dateTime = document.createElement("span");
+	// dateContainer.classList.add("dateAndTime");
+	// dateTime.textContent = `${currentTime} - ${currentDate}`;
+	// dateContainer.appendChild(dateTime);
+	// newTaskBtn.appendChild(dateContainer);
 
 	//! Check Button Event
-	checkButton.addEventListener("click", () => {
-		let doneTask = checkButton.parentElement.previousElementSibling;
-		doneTask.style.textDecoration = "line-through";
-		doneTask.style.color = "rgb(0, 255, 0)";
+	checkButton.addEventListener("click", (e) => {
+		let checkTarget = e.target.previousElementSibling.firstChild;
+		checkTarget.style.textDecoration = "line-through";
+		checkTarget.style.color = "rgb(0, 255, 0)";
 	});
 
 	//! Remove Button Event
 	deleteButton.addEventListener("click", (e) => {
 		let target = e.target;
-		target.parentElement.parentElement.parentElement.remove();
+		target.parentElement.remove();
 	});
 
 	//* Task Input Validation (empty field)
@@ -69,6 +63,7 @@ export function createTaskFunction() {
 		});
 	} else {
 		inputTask.value = "";
+		console.log("new task added");
 		return taskContainer.prepend(newTask);
 	}
 }

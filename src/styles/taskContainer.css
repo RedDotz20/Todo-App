@@ -1,0 +1,70 @@
+#tasks-container {
+	flex-flow: column wrap;
+	min-width: 320px;
+	width: 80%;
+}
+
+.task {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 8px;
+	background-color: #151515;
+	height: auto;
+	margin-bottom: 5px;
+	padding: 10px 8px 10px 15px;
+	animation-name: animateTask;
+	animation-duration: 0.3s;
+}
+
+.task:hover {
+	background-color: #313131;
+	transition: 200ms;
+}
+
+@keyframes animateTask {
+	from {
+		left: -50px;
+		opacity: 0;
+	}
+
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+.task ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-right: auto;
+}
+
+.task ul li {
+	height: auto;
+	margin-right: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	list-style: none;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.check-btn,
+.delete-btn {
+	border-radius: 5px;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+.check-btn:hover {
+	color: rgb(0, 255, 0);
+	transition: 400ms;
+}
+
+.delete-btn:hover {
+	color: rgb(255, 0, 0);
+	transition: 200ms;
+}

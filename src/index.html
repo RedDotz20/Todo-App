@@ -9,8 +9,11 @@
 	<title>To-do List</title>
 	<link rel="shortcut icon" href="#">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="/src/styles/alertBox.css">
+	<link rel="stylesheet" href="/src/styles/taskContainer.css">
+
 	<script defer type="module" src="./script.js"></script>
 	<!-- <script defer src="./js/themes.js"></script> -->
 </head>
@@ -28,11 +31,10 @@
 
 	<h1 class="header">
 		<span>TODO LIST</span>
-		<!-- <button id="theme-btn">THEME</button> -->
 	</h1>
 	<div class="container">
 		<div id="add-task-container">
-			<input id="input-task" autofocus type="text" placeholder="ENTER NEW TASK" />
+			<input id="input-task" type="text" placeholder="ENTER NEW TASK" autofocus />
 			<button type="button" id="add-task">
 				<span class="material-icons" style="color:black">
 					add_circle_outline

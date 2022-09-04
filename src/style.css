@@ -9,6 +9,8 @@
 	box-sizing: border-box;
 	font-family: helvetica, sans-serif;
 	color: var(--text-color);
+	margin: 0;
+	padding: 0;
 }
 
 html {
@@ -51,13 +53,15 @@ html {
 	border: 3px solid var(--accent);
 	border-radius: 5px 0 0 5px;
 	border-right: none;
-	padding: 5px;
+	padding: 5px 5px 5px 10px;
 	outline: none;
 	color: #000000;
 }
 
 #input-task::placeholder {
 	font-weight: 100;
+	font-size: 12px;
+	font-weight: 500;
 }
 
 #add-task {
@@ -79,92 +83,11 @@ html {
 	height: 20px;
 }
 
-input::placeholder {
-	color: black;
-	font-size: 12px;
-	font-weight: 500;
-}
-
-#tasks-container {
-	flex-flow: column wrap;
-	min-width: 320px;
-	width: 80%;
-}
-
-.task {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	border-radius: 8px;
-	background-color: #151515;
-	height: auto;
-	margin-bottom: 5px;
-	padding: 10px 10px 10px 15px;
-	animation-name: animateTask;
-	animation-duration: 0.3s;
-}
-
-.task:hover {
-	background-color: #141414;
-	transition: 400ms;
-}
-
-@keyframes animateTask {
-	from {
-		left: -50px;
-		opacity: 0;
-	}
-
-	to {
-		left: 0;
-		opacity: 1;
-	}
-}
-
-.task .content {
-	flex: 2;
-	height: auto;
-	margin-right: 10px;
-	font-size: 16px;
-	font-weight: 600;
-	list-style: none;
-	word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre-wrap;
-}
-
-.taskbtn-Container {
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	margin: auto 0;
-	min-width: 100px;
-}
-
-.check-btn,
-.delete-btn {
-	background-color: var(--primary);
-	border: 1px solid var(--primary);
-	border-radius: 4px;
-	height: 33px;
-	cursor: pointer;
-}
-
-.check-btn:hover {
-	border: 1px solid rgb(0, 255, 0);
-	transition: 200ms;
-}
-
-.delete-btn:hover {
-	border: 1px solid rgb(255, 0, 0);
-	transition: 200ms;
-}
-
-.dateAndTime {
+/* .dateAndTime {
 	font-size: 10px;
 	text-align: center;
 	margin: 3px 0;
 	flex-basis: 100%;
 	width: 0;
 	height: auto;
-}
+} */
