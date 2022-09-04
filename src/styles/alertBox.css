@@ -32,6 +32,7 @@
 	padding: 10px;
 	border-radius: 5px;
 	font-size: 1.3rem;
+	user-select: none;
 	animation-name: animateAlertBox;
 	animation-duration: 0.3s;
 }
@@ -54,7 +55,7 @@
 }
 
 #error-icon {
-	color: rgb(211, 145, 22);
+	color: #ff0000;
 	font-size: 3rem;
 }
 
