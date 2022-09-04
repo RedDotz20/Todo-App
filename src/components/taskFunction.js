@@ -69,6 +69,6 @@ export function createTaskFunction() {
 		});
 	} else {
 		inputTask.value = "";
-		return taskContainer.appendChild(newTask);
+		return taskContainer.prepend(newTask);
 	}
 }
