@@ -22,11 +22,8 @@
 }
 
 #alertBox {
-	background-color: #fff;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	background-color: #ffff;
+	margin: 30vh auto;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
