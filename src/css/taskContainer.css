@@ -1,0 +1,103 @@
+#tasks-container {
+	flex-flow: column wrap;
+	min-width: 320px;
+	width: 80%;
+}
+
+.task {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 8px;
+	background-color: #151515;
+	height: auto;
+	margin-bottom: 5px;
+	padding: 10px 8px 10px 15px;
+	animation-name: animateTask;
+	animation-duration: 0.3s;
+}
+
+.task:hover {
+	background-color: #313131;
+	transition: 200ms;
+}
+
+@keyframes animateTask {
+	from {
+		left: -50px;
+		opacity: 0;
+	}
+
+	to {
+		left: 0;
+		opacity: 1;
+	}
+}
+
+.content input,
+.edit {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-right: auto;
+}
+
+.content input {
+	height: auto;
+	width: max-content;
+	margin-right: 10px;
+	margin: 0 10px 0 10px;
+	font-size: 16px;
+	font-weight: 600;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.check-btn,
+.delete-btn {
+	color: white;
+	border-radius: 50%;
+	padding: 0 5px;
+	user-select: none;
+}
+
+.check-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid white;
+	margin: auto 0;
+	order: -1;
+}
+
+.check-btn:hover {
+	cursor: pointer;
+}
+
+.check-btn:not(.taskChecked) {
+	color: #151515;
+	transition: 200ms;
+}
+
+.taskChecked {
+	transition: 200ms;
+	color: rgb(0, 255, 0);
+	border: 2px solid rgb(0, 255, 0);
+}
+
+.delete-btn:hover {
+	color: rgb(255, 0, 0);
+	transition: 200ms;
+	cursor: pointer;
+}
