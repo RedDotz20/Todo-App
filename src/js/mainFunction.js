@@ -1,18 +1,17 @@
-import { currentDate, currentTime } from "./dateAndTime.js";
-import {
-	openAlert,
-	closeAlert,
-	addTask,
-	inputTask,
-	taskContainer,
-} from "/src/script.js";
+// import { currentDate, currentTime } from "./dateAndTime.js";
 
-export function enterKeyFunction(e) {
+const addTask = document.getElementById("add-task");
+const inputTask = document.getElementById("input-task");
+const taskContainer = document.getElementById("tasks-container");
+
+//! Enter Event Handler
+inputTask.addEventListener("keyup", (e) => {
 	e.preventDefault();
 	if (e.keyCode === 13) addTask.click();
-}
+});
 
-export function createTaskFunction() {
+//! CREATE TASK MAIN FUNCTION
+addTask.addEventListener("click", () => {
 	//* Creating Task Container | Getting Input Value
 	let newTask = document.createElement("div");
 	newTask.classList.add("task");
@@ -21,8 +20,6 @@ export function createTaskFunction() {
 	taskValContainer.classList.add("content");
 
 	let taskValue = document.createElement("input");
-	// taskValue.innerText = `${inputTask.value}`;
-
 	taskValue.classList.add("text");
 	taskValue.type = "text";
 	taskValue.value = inputTask.value;
@@ -88,6 +85,8 @@ export function createTaskFunction() {
 	});
 
 	//* Task Input Validation (empty field)
+	let openAlert = document.getElementById("alertBox-container");
+	let closeAlert = document.getElementById("alertClose-btn");
 	if (inputTask.value === "") {
 		openAlert.style.display = "block";
 		closeAlert.addEventListener("click", () => {
@@ -98,7 +97,7 @@ export function createTaskFunction() {
 		console.log("new task added");
 		return taskContainer.prepend(newTask);
 	}
-}
+});
 
 //* Appending Date and Time Variables to Task
 // let dateContainer = document.createElement("div");
