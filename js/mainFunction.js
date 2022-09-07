@@ -1,5 +1,7 @@
 // import { currentDate, currentTime } from "./dateAndTime.js";
 
+import { editBtnFunction } from "./events.js";
+
 const addTask = document.getElementById("add-task");
 const inputTask = document.getElementById("input-task");
 const taskContainer = document.getElementById("tasks-container");
@@ -47,19 +49,7 @@ addTask.addEventListener("click", () => {
 	newTask.appendChild(deleteButton);
 
 	//! Edit Button Event Handler
-	editTaskButton.addEventListener("click", (e) => {
-		let checkDone = e.target.nextElementSibling;
-		if (editTaskButton.innerText == "EDIT") {
-			if (!checkDone.classList.contains("taskChecked")) {
-				editTaskButton.innerText = "SAVE";
-				taskValue.removeAttribute("readonly");
-				taskValue.focus();
-			}
-		} else {
-			editTaskButton.innerText = "EDIT";
-			taskValue.setAttribute("readonly", "readonly");
-		}
-	});
+	editTaskButton.addEventListener("click", editBtnFunction);
 
 	//! Check Button Event Handler
 	checkButton.addEventListener("click", (e) => {
@@ -72,9 +62,14 @@ addTask.addEventListener("click", () => {
 			checkTarget.style.transition = "200ms";
 		} else {
 			checkButton.classList.add("taskChecked");
-			checkTarget.style.color = "rgb(0, 255, 0)";
-			checkTarget.style.textDecoration = "line-through";
-			checkTarget.style.transition = "350ms";
+			checkTarget.style.cssText = `
+				text-decoration: line-through;
+				color: rgb(0, 255, 0);
+				transition: 350ms;
+			`;
+			// checkTarget.style.color = "rgb(0, 255, 0)";
+			// checkTarget.style.textDecoration = "line-through";
+			// checkTarget.style.transition = "350ms";
 		}
 	});
 
