@@ -13,3 +13,24 @@ export function editBtnFunction(e) {
 		textInput.setAttribute("readonly", "readonly");
 	}
 }
+
+export function checkBtnFunction(e) {
+	let textInputTarget =
+		e.target.previousElementSibling.previousElementSibling.firstChild.style;
+	let checkTarget = e.target.classList;
+	if (checkTarget.contains("taskChecked")) {
+		checkTarget.remove("taskChecked");
+		textInputTarget.cssText = `
+            color: null;
+            text-decoration = null;
+            transition = "200ms";
+        `;
+	} else {
+		checkTarget.add("taskChecked");
+		textInputTarget.cssText = `
+	        text-decoration: line-through;
+	        color: rgb(0, 255, 0);
+	        transition: 350ms;
+	    `;
+	}
+}

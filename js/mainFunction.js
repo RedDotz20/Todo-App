@@ -1,6 +1,5 @@
 // import { currentDate, currentTime } from "./dateAndTime.js";
-
-import { editBtnFunction } from "./events.js";
+import { checkBtnFunction, editBtnFunction } from "./events.js";
 
 const addTask = document.getElementById("add-task");
 const inputTask = document.getElementById("input-task");
@@ -52,26 +51,7 @@ addTask.addEventListener("click", () => {
 	editTaskButton.addEventListener("click", editBtnFunction);
 
 	//! Check Button Event Handler
-	checkButton.addEventListener("click", (e) => {
-		let checkTarget =
-			e.target.previousElementSibling.previousElementSibling.firstChild;
-		if (checkButton.classList.contains("taskChecked")) {
-			checkButton.classList.remove("taskChecked");
-			checkTarget.style.color = null;
-			checkTarget.style.textDecoration = null;
-			checkTarget.style.transition = "200ms";
-		} else {
-			checkButton.classList.add("taskChecked");
-			checkTarget.style.cssText = `
-				text-decoration: line-through;
-				color: rgb(0, 255, 0);
-				transition: 350ms;
-			`;
-			// checkTarget.style.color = "rgb(0, 255, 0)";
-			// checkTarget.style.textDecoration = "line-through";
-			// checkTarget.style.transition = "350ms";
-		}
-	});
+	checkButton.addEventListener("click", checkBtnFunction);
 
 	//! Remove Button Event Handler
 	deleteButton.addEventListener("click", (e) => {
