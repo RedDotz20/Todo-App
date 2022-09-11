@@ -1,16 +1,16 @@
 export function editBtnFunction(e) {
-	let editButton = document.querySelector(".edit");
 	let checkDone = e.target.nextElementSibling.classList;
-	let textInput = editButton.previousElementSibling.firstChild;
-	if (editButton.innerText == "EDIT") {
+	let textInputTarget = e.target.previousElementSibling.firstChild;
+
+	if (e.target.innerText == "EDIT") {
 		if (!checkDone.contains("taskChecked")) {
-			editButton.innerText = "SAVE";
-			textInput.removeAttribute("readonly");
-			textInput.focus();
+			e.target.innerText = "SAVE";
+			textInputTarget.removeAttribute("readonly");
+			textInputTarget.focus();
 		}
 	} else {
-		editButton.innerText = "EDIT";
-		textInput.setAttribute("readonly", "readonly");
+		e.target.innerText = "EDIT";
+		textInputTarget.setAttribute("readonly", "readonly");
 	}
 }
 

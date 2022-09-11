@@ -75,10 +75,16 @@ inputTask.addEventListener("keyup", (e) => {
 	if (e.keyCode === 13) addTask.click();
 });
 
-//* Appending Date and Time Variables to Task
-// let dateContainer = document.createElement("div");
-// let dateTime = document.createElement("span");
-// dateContainer.classList.add("dateAndTime");
-// dateTime.textContent = `${currentTime} - ${currentDate}`;
-// dateContainer.appendChild(dateTime);
-// newTaskBtn.appendChild(dateContainer);
+$(document).ready(function () {
+	$("add-task").click(function () {
+		let newTask = $("<div></div>").addClass("task");
+		let taskValContainer = $("<div></div>").addClass("content");
+
+		let taskValue = $('<input type="text">')
+			.addClass("text")
+			.val($("input-task"))
+			.attr("readonly", "readonly");
+
+		taskValue.$("tasks-container").prepend(newTask);
+	});
+});
