@@ -1,19 +1,13 @@
-// import { currentDate, currentTime } from "./dateAndTime.js";
+"use strict"; //! STRICT MODE ENABLED
 import { checkBtnFunction, editBtnFunction } from "./events.js";
 
 const addTask = document.getElementById("add-task");
 const inputTask = document.getElementById("input-task");
 const taskContainer = document.getElementById("tasks-container");
 
-//! Enter Event Handler
-inputTask.addEventListener("keyup", (e) => {
-	e.preventDefault();
-	if (e.keyCode === 13) addTask.click();
-});
-
 //! CREATE TASK MAIN FUNCTION
 addTask.addEventListener("click", () => {
-	//* Creating Task Container | Getting Input Value
+	//* Creating Task Container | Getting User Input Value
 	let newTask = document.createElement("div");
 	newTask.classList.add("task");
 
@@ -72,6 +66,12 @@ addTask.addEventListener("click", () => {
 		console.log("new task added");
 		return taskContainer.prepend(newTask);
 	}
+});
+
+//! Enter Event Handler
+inputTask.addEventListener("keyup", (e) => {
+	e.preventDefault();
+	if (e.keyCode === 13) addTask.click();
 });
 
 //* Appending Date and Time Variables to Task
