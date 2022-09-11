@@ -1,16 +1,17 @@
-:root {
+*,
+*::before,
+*::after {
 	--primary: #151515;
 	--secondary: #000000;
 	--accent: #00adb5;
 	--text-color: #ffff;
-}
 
-* {
 	box-sizing: border-box;
 	font-family: helvetica, sans-serif;
-	color: var(--text-color);
 	margin: 0;
 	padding: 0;
+	color: var(--text-color);
+
 	/* outline: 1px solid red; */
 }
 
@@ -38,7 +39,7 @@ html {
 }
 
 #add-task-container {
-	min-width: 320px;
+	/* min-width: 300px; */
 	width: 80%;
 	margin-bottom: 15px;
 	display: flex;

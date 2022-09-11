@@ -1,6 +1,6 @@
 #tasks-container {
 	flex-flow: column wrap;
-	min-width: 320px;
+	/* min-width: 320px; */
 	width: 80%;
 }
 
@@ -50,8 +50,8 @@
 }
 
 .content input {
-	height: auto;
-	width: max-content;
+	/* height: auto; */
+	width: 90%;
 	margin-right: 10px;
 	margin: 0 10px 0 10px;
 	font-size: 16px;
