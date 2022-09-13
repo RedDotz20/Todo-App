@@ -1,5 +1,6 @@
 @import url("./styles/alertBox.css");
 @import url("./styles/taskContainer.css");
+@import url("./styles/sidebarTasks.css");
 
 *,
 *::before,
@@ -84,12 +85,3 @@ html {
 	width: 20px;
 	height: 20px;
 }
-
-/* .dateAndTime {
-	font-size: 10px;
-	text-align: center;
-	margin: 3px 0;
-	flex-basis: 100%;
-	width: 0;
-	height: auto;
-} */

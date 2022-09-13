@@ -22,3 +22,11 @@ function getDateAndTime(value) {
 
 export const currentDate = getDateAndTime("date");
 export const currentTime = getDateAndTime("12hrtime");
+
+//* Appending Date and Time Variables to Task
+// let dateContainer = document.createElement("div");
+// let dateTime = document.createElement("span");
+// dateContainer.classList.add("dateAndTime");
+// dateTime.textContent = `${currentTime} - ${currentDate}`;
+// dateContainer.appendChild(dateTime);
+// newTaskBtn.appendChild(dateContainer);
