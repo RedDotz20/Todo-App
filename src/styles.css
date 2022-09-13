@@ -1,77 +1,95 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: white;
+@import url("./styles/alertBox.css");
+@import url("./styles/taskContainer.css");
+
+*,
+*::before,
+*::after {
+	--primary: #151515;
+	--secondary: #000000;
+	--accent: #00adb5;
+	--text-color: #ffff;
+
+	box-sizing: border-box;
+	font-family: helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: var(--text-color);
 }
 
 html {
-  height: 100%;
-  background: #000000;
+	height: 100%;
+	background: var(--secondary);
 }
 
 .header {
-  text-align: center;
-  margin: 30px 0;
+	text-align: center;
+	margin: 30px 0;
 }
 
 .header span {
-  min-width: 170px;
-  white-space: nowrap;
+	min-width: 170px;
+	white-space: nowrap;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-  width: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 30px auto;
+	width: auto;
 }
 
 #add-task-container {
-  width: 80%;
-  margin-bottom: 15px;
-  display: flex;
-  position: relative;
-  font-size: small;
+	/* min-width: 300px; */
+	width: 80%;
+	margin-bottom: 15px;
+	display: flex;
+	position: relative;
+	font-size: small;
 }
 
 #input-task {
-  font-size: large;
-  font-weight: 700;
-  width: 100%;
-  height: 40px;
-  border: 3px solid #00adb5;
-  border-radius: 5px 0 0 5px;
-  border-right: none;
-  padding: 5px 5px 5px 10px;
-  outline: none;
-  color: #000000;
+	font-size: large;
+	font-weight: 700;
+	width: 100%;
+	height: 40px;
+	border: 3px solid var(--accent);
+	border-radius: 5px 0 0 5px;
+	border-right: none;
+	padding: 5px 5px 5px 10px;
+	outline: none;
+	color: #000000;
 }
 
 #input-task::placeholder {
-  font-size: 12px;
-  font-weight: 500;
+	font-size: 12px;
+	font-weight: 500;
 }
 
 #add-task {
-  background: #00adb5;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
-  padding-top: 5px;
-  border: 1px solid #00adb5;
-  border-radius: 0 5px 5px 0;
+	background: var(--accent);
+	color: var(--text-color);
+	text-align: center;
+	cursor: pointer;
+	font-size: 20px;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	padding-top: 5px;
+	border: 1px solid var(--accent);
+	border-radius: 0 5px 5px 0;
 }
 
 #add-task .icon {
-  width: 20px;
-  height: 20px;
+	width: 20px;
+	height: 20px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/* .dateAndTime {
+	font-size: 10px;
+	text-align: center;
+	margin: 3px 0;
+	flex-basis: 100%;
+	width: 0;
+	height: auto;
+} */
