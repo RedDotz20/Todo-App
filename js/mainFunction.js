@@ -1,4 +1,4 @@
-// "use strict"; //! STRICT MODE ENABLED
+"use strict"; //! STRICT MODE ENABLED
 
 import { checkBtnFunction, editBtnFunction } from "./events.js";
 
@@ -15,14 +15,32 @@ addTask.addEventListener("click", () => {
 	let taskValContainer = document.createElement("div");
 	taskValContainer.classList.add("content");
 
-	let taskValue = document.createElement("input");
+	// let taskValue = document.createElement("input");
+	// taskValue.classList.add("text");
+	// taskValue.type = "text";
+	// taskValue.value = inputTask.value;
+	// taskValue.setAttribute("readonly", "readonly");
+
+	// taskValContainer.appendChild(taskValue);
+	// newTask.appendChild(taskValContainer);
+
+	// ---------------------------------------------
+
+	let taskValue = document.createElement("TEXTAREA");
 	taskValue.classList.add("text");
-	taskValue.type = "text";
+	// taskValue.type = "text";
 	taskValue.value = inputTask.value;
 	taskValue.setAttribute("readonly", "readonly");
 
 	taskValContainer.appendChild(taskValue);
 	newTask.appendChild(taskValContainer);
+
+	taskValue.addEventListener("click", function (e) {
+		e.style.height = "5px";
+		e.style.height = element.scrollHeight + "px";
+	});
+
+	// ---------------------------------------------
 
 	//* Creating and Appending Edit Button to Task
 	let editTaskButton = document.createElement("button");
