@@ -34,8 +34,7 @@
 	}
 }
 
-/* .content input, */
-.content textarea,
+.content input,
 .edit {
 	appearance: none;
 	border: none;
@@ -51,9 +50,8 @@
 	margin-right: auto;
 }
 
-/* .content input  */
-.content textarea {
-	/* width: 90%; */
+.content input {
+	width: auto;
 	overflow: hidden;
 	resize: none;
 	margin-right: auto;
@@ -61,9 +59,9 @@
 	font-size: 16px;
 	font-weight: 600;
 	overflow-wrap: break-word;
-	/* word-break: break-all;
+	word-break: break-all;
 	word-wrap: break-word;
-	white-space: pre-wrap; */
+	white-space: pre-wrap;
 }
 
 .check-btn {
