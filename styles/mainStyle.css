@@ -61,7 +61,6 @@ html {
 }
 
 #input-task::placeholder {
-	font-weight: 100;
 	font-size: 12px;
 	font-weight: 500;
 }
