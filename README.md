@@ -1,3 +1,3 @@
-# Todo-App
+# Todo List App
 
-📝 Beginner Project
+📝 A Beginner's Project created using HTML, CSS, JavaScript
