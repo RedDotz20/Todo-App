@@ -16,18 +16,18 @@ export function editBtnFunction(e) {
 
 export function checkBtnFunction(e) {
 	let textInputTarget =
-		e.target.previousElementSibling.previousElementSibling.firstChild.style;
+		e.target.previousElementSibling.previousElementSibling.firstChild;
 	let checkTarget = e.target.classList;
 	if (checkTarget.contains("taskChecked")) {
 		checkTarget.remove("taskChecked");
-		textInputTarget.cssText = `
+		textInputTarget.style.cssText = `
             color: null;
             text-decoration = null;
             transition = "200ms";
         `;
 	} else {
 		checkTarget.add("taskChecked");
-		textInputTarget.cssText = `
+		textInputTarget.style.cssText = `
 	        text-decoration: line-through;
 	        color: rgb(0, 255, 0);
 	        transition: 350ms;
