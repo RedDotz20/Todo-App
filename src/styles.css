@@ -46,7 +46,7 @@ html {
 	width: 100%;
 	font-size: large;
 	font-weight: 700;
-	height: 40px;
+	height: 2.5rem;
 	border: 3px solid var(--accent);
 	border-radius: 5px 0 0 5px;
 	border-right: none;
@@ -65,15 +65,10 @@ html {
 	color: var(--text-color);
 	text-align: center;
 	cursor: pointer;
-	font-size: 20px;
+	font-size: 1rem;
 	width: 40px;
-	height: 40px;
+	height: 2.5rem;
 	padding-top: 5px;
 	border: 1px solid var(--accent);
 	border-radius: 0 5px 5px 0;
 }
-
-/* #add-task .icon {
-	width: 20px;
-	height: 20px;
-} */

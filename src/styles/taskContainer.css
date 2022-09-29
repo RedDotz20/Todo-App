@@ -53,8 +53,8 @@
 }
 
 .content input {
-	min-width: 10rem;
-	max-width: 45rem;
+	/* min-width: 10rem; */
+	max-width: 1rem;
 	/* max-width: 20px; */
 	/* width: auto; */
 	/* overflow: hidden; */
