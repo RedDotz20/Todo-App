@@ -9,7 +9,6 @@
 .task {
 	position: relative;
 	display: flex;
-	justify-content: space-between;
 	border-radius: 0.5em;
 	background-color: #151515;
 	height: auto;
@@ -47,26 +46,14 @@
 
 .content {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
-	margin-right: auto;
+	width: 100%;
+	margin: 0 5px;
 }
 
 .content input {
-	/* min-width: 10rem; */
-	max-width: auto !important;
-	/* max-width: 20px; */
-	/* width: auto; */
-	/* overflow: hidden; */
-	/* resize: none; */
-	margin-left: 10px;
-	/* margin: 0 10px 0 10px; */
-	/* font-size: 16px; */
+	width: 100%;
 	font-weight: 600;
-	/* overflow-wrap: break-word; */
-	/* word-break: break-all;
-	word-wrap: break-word;
-	white-space: pre-wrap; */
 }
 
 .check-btn {
@@ -94,15 +81,6 @@
 	margin: auto 5px;
 	user-select: none;
 }
-
-/* .check-btn:hover {
-	cursor: pointer;
-}
-
-.check-btn:not(.taskChecked) {
-	color: #151515;
-	transition: 200ms;
-} */
 
 .taskChecked {
 	text-decoration: line-through;

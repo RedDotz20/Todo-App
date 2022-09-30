@@ -18,7 +18,6 @@ export function createTaskFunction() {
 	// checkbox.value = "value";
 	checkbox.id = "checkboxId";
 	newTask.appendChild(checkbox);
-	console.log("checkbox created");
 
 	checkbox.addEventListener("click", validateCheckBox);
 
@@ -39,19 +38,6 @@ export function createTaskFunction() {
 
 	//! Edit Button Event Handler
 	editTaskButton.addEventListener("click", editBtnFunction);
-
-	// -----------------------------------------
-
-	//* Creating and Appending Check Button to Task
-	// let checkButton = document.createElement("i");
-	// checkButton.classList.add("material-icons", "check-btn");
-	// checkButton.innerText = "check";
-	// newTask.appendChild(checkButton);
-
-	//! Check Button Event Handler
-	// checkButton.addEventListener("click", checkBtnFunction);
-
-	// -----------------------------------------
 
 	//* Creating and Appending Delete Button to Task
 	let deleteButton = document.createElement("i");
