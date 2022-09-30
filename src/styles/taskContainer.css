@@ -54,7 +54,7 @@
 
 .content input {
 	/* min-width: 10rem; */
-	max-width: 1rem;
+	max-width: auto !important;
 	/* max-width: 20px; */
 	/* width: auto; */
 	/* overflow: hidden; */
@@ -95,17 +95,18 @@
 	user-select: none;
 }
 
-.check-btn:hover {
+/* .check-btn:hover {
 	cursor: pointer;
 }
 
 .check-btn:not(.taskChecked) {
 	color: #151515;
 	transition: 200ms;
-}
+} */
 
 .taskChecked {
-	transition: 200ms;
+	text-decoration: line-through;
+	transition: 350ms;
 	color: rgb(0, 255, 0);
 	border: 2px solid rgb(0, 255, 0);
 }

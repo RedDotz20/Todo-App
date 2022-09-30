@@ -1,4 +1,4 @@
-import { editBtnFunction, checkBtnFunction } from "./taskEvent.js";
+import { editBtnFunction, validateCheckBox } from "./taskEvent.js";
 
 const taskContainer = document.getElementById("tasks-container");
 export const inputTask = document.getElementById("input-task");
@@ -10,6 +10,17 @@ export function createTaskFunction() {
 
 	let taskValContainer = document.createElement("div");
 	taskValContainer.classList.add("content");
+
+	//* New Check button
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	// checkbox.name = "name";
+	// checkbox.value = "value";
+	checkbox.id = "checkboxId";
+	newTask.appendChild(checkbox);
+	console.log("checkbox created");
+
+	checkbox.addEventListener("click", validateCheckBox);
 
 	let taskValue = document.createElement("input");
 	taskValue.classList.add("text");
@@ -29,14 +40,18 @@ export function createTaskFunction() {
 	//! Edit Button Event Handler
 	editTaskButton.addEventListener("click", editBtnFunction);
 
+	// -----------------------------------------
+
 	//* Creating and Appending Check Button to Task
-	let checkButton = document.createElement("i");
-	checkButton.classList.add("material-icons", "check-btn");
-	checkButton.innerText = "check";
-	newTask.appendChild(checkButton);
+	// let checkButton = document.createElement("i");
+	// checkButton.classList.add("material-icons", "check-btn");
+	// checkButton.innerText = "check";
+	// newTask.appendChild(checkButton);
 
 	//! Check Button Event Handler
-	checkButton.addEventListener("click", checkBtnFunction);
+	// checkButton.addEventListener("click", checkBtnFunction);
+
+	// -----------------------------------------
 
 	//* Creating and Appending Delete Button to Task
 	let deleteButton = document.createElement("i");
