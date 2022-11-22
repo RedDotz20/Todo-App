@@ -2,4 +2,4 @@
 
 📝 A Beginner's Project created using HTML, CSS, JavaScript
 
-test
+test 2
