@@ -1,5 +1,5 @@
-@import url(./styles/alertBox.css);
-@import url(./styles/taskContainer.css);
+@import url(./alertBox.css);
+@import url(./taskContainer.css);
 
 *,
 ::after,

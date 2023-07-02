@@ -6,10 +6,7 @@ export const inputTask = document.getElementById('input-task');
 export function createTaskFunction() {
 	const taskValue = inputTask.value.trim();
 
-	if (taskValue === '') {
-		displayAlert('Please enter a task.');
-		return;
-	}
+	if (taskValue === '') return displayAlert('Please enter a task.');
 
 	const newTask = document.createElement('div');
 	newTask.classList.add('task');
